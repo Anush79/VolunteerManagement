@@ -18,9 +18,10 @@ function App() {
     dispatch(fetchPatients());
     dispatch(fetchWards());
   }, [dispatch]);
-  console.log({pLoading}, {wLoading})
+ 
   return (
     <div className="App">
+      
       <header>
         <Header />
       </header>

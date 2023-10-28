@@ -29,7 +29,9 @@ export default function PatientForm({ preData, type, submitFunction , onClose })
       dispatch(submitFunction({ id: preData._id, formData }))
     }
     setFormData(initialValue)
-    onClose()
+    if(onClose){
+      onClose()
+    }
   }
 
   return (
