@@ -1,6 +1,57 @@
-# Getting Started with Create React App
+# Patient Management Application
+### Introduction
+The Patient Management Application is designed to streamline the management of patient information within a healthcare facility. It offers tools for healthcare administrators and staff to efficiently manage patient records, view ward-specific data, and access hospital-wide statistics.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Product Description
+Patient Management:
+
+Users can add, edit, and delete patient records, view individual patient details, and list all patients.
+Patients must be associated with a ward.
+
+### Ward Management:
+
+Users can add, edit, and delete ward records, view individual ward details, and list all wards.
+Wards may include information like ward number, capacity, and specializations.
+
+### Hospital View:
+
+Users can view hospital-wide statistics, including the total number of patients, occupancy rate, average length of stay, and top-performing ward.
+Functional Requirements#
+Patient Management
+
+###  Add Patient
+
+Healthcare staff can add a new patient by providing the following information: patient's name, age, gender, medical history, contact information, and assigned ward.
+Patients must be assigned to a specific ward during the registration process.
+Edit Patient
+
+Healthcare staff can edit an existing patient's information.
+Editing includes updating patient's name, age, gender, medical history, contact information, and assigned ward.
+
+### Delete Patient
+
+Healthcare staff can delete a patient record from the system.
+#### View Patients
+
+Users can view a list of all patients in the hospital.
+Users can view the details of a specific patient, including their medical history and contact information.
+Ward Management
+
+#### Add Ward
+
+Healthcare administrators can add a new ward by providing information such as ward number, capacity, and specializations (e.g., pediatrics, surgery, ICU).
+
+#### Edit Ward
+
+Healthcare administrators can edit an existing ward's information.
+Editing includes updating ward number, capacity, and specializations.
+
+#### Delete Ward
+Healthcare administrators can delete a ward record from the system.
+
+####  View Wards
+Users can view a list of all wards in the hospital.
+Users can view the details of a specific ward, including its current occupancy and specialization.
 
 ## Available Scripts
 
