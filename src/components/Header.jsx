@@ -9,7 +9,7 @@ export default function Header(){
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/patients'>Patients</NavLink>
       <NavLink to='/wards'>Wards</NavLink>
-      <NavLink to='https://github.com/Anush79/HospitalManagement' target="_blank"><GitHubIcon/></NavLink>
+      <NavLink to='https://github.com/Anush79/PatientManagement' target="_blank"><GitHubIcon/></NavLink>
       <NavLink to='https://replit.com/@AnushkaJaiswal7/HospitalManagement'target="_blank"><StorageIcon/></NavLink>
 
     </nav>
