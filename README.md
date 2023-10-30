@@ -1,121 +1,69 @@
-# Patient Management Application
-### Introduction
-The Patient Management Application is designed to streamline the management of patient information within a healthcare facility. It offers tools for healthcare administrators and staff to efficiently manage patient records, view ward-specific data, and access hospital-wide statistics.
+# Volunteer Management Application
 
-### Product Description
-Patient Management:
+## Introduction
 
-Users can add, edit, and delete patient records, view individual patient details, and list all patients.
-Patients must be associated with a ward.
+The Volunteer Management Application is designed to simplify the process of recruiting, tracking, and engaging volunteers for various events and initiatives. It provides tools for organizers to efficiently manage volunteer records, create events, and access event and volunteer statistics.
 
-### Ward Management:
+#### Product Description
 
-Users can add, edit, and delete ward records, view individual ward details, and list all wards.
-Wards may include information like ward number, capacity, and specializations.
+- Volunteer Management:
 
-### Hospital View:
+- Users can add, edit, and delete volunteer records, view individual volunteer details, and list all volunteers.
+- Volunteers are associated with one or more events.
+  Event Management:
 
-Users can view hospital-wide statistics, including the total number of patients, occupancy rate, average length of stay, and top-performing ward.
-Functional Requirements#
-Patient Management
+- Users can add, edit, and delete event records, view individual event details, and list all events.
+- Events may include information like event name, date, location, description, and required volunteer roles.
 
-###  Add Patient
+#### Event Summary View:
 
-Healthcare staff can add a new patient by providing the following information: patient's name, age, gender, medical history, contact information, and assigned ward.
-Patients must be assigned to a specific ward during the registration process.
-Edit Patient
+Users can view a summary of a specific event, including the list of registered volunteers, volunteer roles, and event details.
+Volunteer Summary View:
 
-Healthcare staff can edit an existing patient's information.
-Editing includes updating patient's name, age, gender, medical history, contact information, and assigned ward.
+Users can view a summary of a specific volunteer, including their contact information, assigned events, and volunteer history.
 
-### Delete Patient
+### Functional Requirements
 
-Healthcare staff can delete a patient record from the system.
-#### View Patients
+####Volunteer Management
 
-Users can view a list of all patients in the hospital.
-Users can view the details of a specific patient, including their medical history and contact information.
-Ward Management
+Add Volunteer
 
-#### Add Ward
+Organizers can add a new volunteer by providing the following information: volunteer's name, contact information, skills, availability, and areas of interest.
+Volunteers must be assigned to one or more events during registration.
+Edit Volunteer
 
-Healthcare administrators can add a new ward by providing information such as ward number, capacity, and specializations (e.g., pediatrics, surgery, ICU).
+Organizers can edit an existing volunteer's information.
+Editing includes updating a volunteer's name, contact information, skills, availability, and areas of interest.
+Delete Volunteer
 
-#### Edit Ward
+Organizers can delete a volunteer record from the system.
+View Volunteers
 
-Healthcare administrators can edit an existing ward's information.
-Editing includes updating ward number, capacity, and specializations.
+Users can view a list of all registered volunteers.
+Users can view the details of a specific volunteer, including their skills, availability, and event history.
+Event Management
 
-#### Delete Ward
-Healthcare administrators can delete a ward record from the system.
+Add Event
 
-####  View Wards
-Users can view a list of all wards in the hospital.
-Users can view the details of a specific ward, including its current occupancy and specialization.
+Organizers can add a new event by providing information such as event name, date, location, description, and the required number of volunteers for each role.
+Edit Event
 
-## Available Scripts
+Organizers can edit an existing event's information.
+Editing includes updating event name, date, location, description, and volunteer role requirements.
+Delete Event
 
-In the project directory, you can run:
+Organizers can delete an event record from the system.
+View Events
 
-### `npm start`
+Users can view a list of all upcoming events.
+Users can view the details of a specific event, including the list of registered volunteers and required volunteer roles.
+Event Summary View
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+View Event Summary
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users can view a summary of a specific event, which includes the list of registered volunteers, volunteer roles, and event details.
+Volunteer Summary View
 
-### `npm test`
+View Volunteer Summary
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Users can view a summary of a specific volunteer, which includes their contact information, assigned events, and volunteer history.
