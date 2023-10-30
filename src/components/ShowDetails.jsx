@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
+import Box from '@mui/material/Box';
 import Modal from "@mui/material/Modal";
 import {
   fetchWards,
@@ -12,7 +12,7 @@ import {
   fetchPatients,
   deletePatientData,
   updatePatients,
-} from "../features/patients/patientSlice";
+} from "../features/volunteer/patientSlice";
 import PatientForm from "./PatientsForm";
 import WardForm from "./WardForm";
 

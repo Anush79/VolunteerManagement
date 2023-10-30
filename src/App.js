@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import "./App.css";
-import Patients from "./features/patients/Patients";
+
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPatients } from "./features/patients/patientSlice";
+import { fetchPatients } from "./features/volunteer/patientSlice";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./features/Dashboard";
 import Wards from "./features/wards/Wards";
 import Header from "./components/Header";
 import { fetchWards } from "./features/wards/wardSlice";
 import ShowDetails from "./components/ShowDetails";
+import HotToast from "./components/HotToast";
+import Volunteer from "./features/volunteer/Volunteerr";
 function App() {
   const dispatch = useDispatch();
   const { status: pLoading } = useSelector((state) => state?.patients);
@@ -21,17 +23,17 @@ function App() {
  
   return (
     <div className="App">
-      
+
       <header>
         <Header />
       </header>
-    
+    <HotToast/>
       <main>
         {pLoading==='loading' || wLoading==='loading' ? <div className="loader"></div> : null}
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/patients" element={<Patients />} />
-          <Route path="/wards" element={<Wards />} />
+          <Route path="/volunteer" element={<Volunteer />} />
+          <Route path="/events" element={<Wards />} />
           <Route path="/:type/:id" element={<ShowDetails />} />
         </Routes>
       </main>

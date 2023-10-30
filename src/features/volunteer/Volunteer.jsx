@@ -2,23 +2,23 @@ import { useSelector } from "react-redux"
 import { NavLink } from "react-router-dom";
 import PatientForm from "../../components/PatientsForm";
 
-import {addPatients} from './patientSlice'
+import { addVolunteer } from './volunteerSlice'
 
-export default function Patient() {
-  const { patients } = useSelector(state => state.patients);
+export default function Volunteer() {
+  const { patients } = useSelector(state => state.volunteers);
 
   return <div>
-    <h3>Patients View</h3> 
-     <PatientForm submitFunction={addPatients} type="add"/>
+    <h3>Patients View</h3>
+    <PatientForm submitFunction={addVolunteer} type="add" />
     <ul>
       {
         patients?.map(item => <li key={item._id}>
           <NavLink to={`/patients/${item._id}`}>
-         <span>{item.name}</span>  ({item.age})
+            <span>{item.name}</span>  ({item.age})
           </NavLink>
-          </li>)
+        </li>)
       }
     </ul>
-  
+
   </div>
 }
