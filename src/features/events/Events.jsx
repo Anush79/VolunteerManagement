@@ -10,6 +10,7 @@ export default function Events() {
   const { events } = useSelector(state => state.events);
   return <div>
     <h3>Events View</h3>
+    <div className="contain">
     <EventsForm type="add" submitFunction={addEvent} />
     <ul>
       {
@@ -20,6 +21,6 @@ export default function Events() {
         </li>)
       }
     </ul>
-
+    </div>
   </div>
 }
