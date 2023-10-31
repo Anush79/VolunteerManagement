@@ -6,26 +6,28 @@ import axios from 'axios';
 
 export const fetchVolunteers = createAsyncThunk('/volunteers/fetchVolunteers', 
   async () => {
-    const response = await axios.get('https://volunteer-management-application.anushkajaiswal7.repl.co/volunteers');
+ 
+    const response = await axios.get('https://volunteer-management-application.anushkajaiswal7.repl.co/volunteer');
     return response?.data?.data;
   }
 );
 
 export const addVolunteer = createAsyncThunk('/volunteers/addVolunteer', async (bodyData) => {
-  const response = await axios.post('https://volunteer-management-application.anushkajaiswal7.repl.co/volunteers', bodyData);
+  const response = await axios.post('https://volunteer-management-application.anushkajaiswal7.repl.co/volunteer', bodyData);
   toast.success(response.data.message);
   return response.data.data;
 });
 
 export const deleteVolunteer = createAsyncThunk('/volunteers/deleteVolunteer', async (id) => {
-  const response = await axios.delete(`https://volunteer-management-application.anushkajaiswal7.repl.co/volunteers/${id}`);
+  const response = await axios.delete(`https://volunteer-management-application.anushkajaiswal7.repl.co/volunteer/${id}`);
   toast.success(response.data.message);
   return response.data.data;
 });
 
-export const updateVolunteer = createAsyncThunk('/volunteers/updateVolunteer', async ({ id, formData }) => {
-  const response = await axios.put(`https://volunteer-management-application.anushkajaiswal7.repl.co/volunteers/${id}`, formData);
+export const updateVolunteer = createAsyncThunk('/volunteers/updateVolunteer', async ({ id, volunteerData }) => {
+  const response = await axios.put(`https://volunteer-management-application.anushkajaiswal7.repl.co/volunteer/${id}`, volunteerData);
   toast.success(response.data.message);
+  console.log(response.data.data);
   return response.data.data;
 });
 

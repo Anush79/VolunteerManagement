@@ -60,10 +60,16 @@ button:hover {
 form {
   padding: 2rem;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-}
+  max-width: fit-content;
 
+}
+form>div{
+  display: flex;
+  align-items: center;
+}
 svg {
   padding: 5px;
 }
@@ -109,20 +115,27 @@ li svg{
 }
 
 input,
-select {
+select, textarea {
   min-width:12ch;
   padding: 0.5rem;
   border: 2px solid;
   background: #ddd;
   border-radius: 5px;
   margin:3px;
+
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+  white-space: pre-wrap;
+  overflow-x: scroll;
+  }
+textarea{
+  resize: none;
 }
 .formToUpdate form{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
 }
 button:hover {
   transform: scale(0.95);
@@ -168,5 +181,11 @@ button {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+@media (min-width:670px) {
+  .contain{
+    display: flex;
+    justify-content: space-between;
   }
 }

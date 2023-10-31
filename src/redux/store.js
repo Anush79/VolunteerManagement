@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { volunteerSlice } from '../features/volunteer/volunteerSlice'
-import wardSlice from "../features/wards/wardSlice";
+import volunteerSlice from '../features/volunteer/volunteerSlice'
+import eventSlice from "../features/events/eventSlice";
 
 export default configureStore({
   reducer: {
-    patients: volunteerSlice,
-    wards: wardSlice
+    volunteers: volunteerSlice,
+    events: eventSlice
   }
 })

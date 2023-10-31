@@ -2,38 +2,40 @@ import { useEffect } from "react";
 import "./App.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPatients } from "./features/volunteer/patientSlice";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./features/Dashboard";
-import Wards from "./features/wards/Wards";
+import Wards from "./features/events/Events";
 import Header from "./components/Header";
-import { fetchWards } from "./features/wards/wardSlice";
+import { fetchEvents } from "./features/events/eventSlice";
 import ShowDetails from "./components/ShowDetails";
 import HotToast from "./components/HotToast";
-import Volunteer from "./features/volunteer/Volunteerr";
+import Volunteer from "./features/volunteer/Volunteer";
+import { fetchVolunteers } from "./features/volunteer/volunteerSlice";
+import Events from "./features/events/Events";
 function App() {
   const dispatch = useDispatch();
-  const { status: pLoading } = useSelector((state) => state?.patients);
-  const { status: wLoading } = useSelector((state) => state?.wards);
+  const { status:vloading } = useSelector((state) => state?.volunteers
+  );
+  const { status: eLoading } = useSelector((state) => state?.events);
 
   useEffect(() => {
-    dispatch(fetchPatients());
-    dispatch(fetchWards());
+    dispatch(fetchVolunteers());
+    dispatch(fetchEvents());
   }, [dispatch]);
- 
+
   return (
     <div className="App">
 
       <header>
         <Header />
       </header>
-    <HotToast/>
+      <HotToast />
       <main>
-        {pLoading==='loading' || wLoading==='loading' ? <div className="loader"></div> : null}
+        {vloading ==='loading' || eLoading==='loading' ? <div className="loader"></div> : null}
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/events" element={<Wards />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/:type/:id" element={<ShowDetails />} />
         </Routes>
       </main>

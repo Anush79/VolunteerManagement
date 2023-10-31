@@ -1,20 +1,20 @@
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Box from '@mui/material/Box';
-import Modal from "@mui/material/Modal";
 import {
-  fetchWards,
-  deleteWardData,
-  updateWards,
-} from "../features/wards/wardSlice";
+  deleteEventData,
+  fetchEvents,
+  updateEvent,
+} from "../features/events/eventSlice";
 import {
-  fetchPatients,
-  deletePatientData,
-  updatePatients,
-} from "../features/volunteer/patientSlice";
-import PatientForm from "./PatientsForm";
-import WardForm from "./WardForm";
+  deleteVolunteer,
+  fetchVolunteers,
+  updateVolunteer,
+} from "../features/volunteer/volunteerSlice";
+import VolunteersForm from "./VolunteersForm";
+import EventsForm from "./EventsForm";
 
 const style = {
   position: "absolute",
@@ -28,8 +28,8 @@ const style = {
   p: 4,
 };
 export default function ShowDetails() {
-  const { wards } = useSelector((state) => state?.wards);
-  const { patients } = useSelector((state) => state?.patients);
+  const { events } = useSelector((state) => state?.events);
+  const { volunteers } = useSelector((state) => state?.volunteers);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id, type } = useParams();
@@ -37,13 +37,13 @@ export default function ShowDetails() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const data =
-    type === "wards"
-      ? wards?.find((item) => item._id === id)
-      : patients?.find((item) => item._id === id);
-  console.log(data);
+    type === "events"
+      ? events?.find((item) => item._id === id)
+      : volunteers?.find((item) => item._id === id);
+  console.log({ data });
   useEffect(() => {
-    dispatch(fetchWards());
-    dispatch(fetchPatients());
+    dispatch(fetchEvents());
+    dispatch(fetchVolunteers());
   }, []);
   return (
     <div className="detailsCard">
@@ -59,7 +59,16 @@ export default function ShowDetails() {
                 <p>
                   {key[0].toUpperCase() + key.slice(1)} :
                   <b>
-                    <i> {data[key]} </i>
+                    <i>
+                      {" "}
+                      {Array.isArray(data[key])
+                        ? data[key].map((item) => <span>| {item} | </span>)
+                        : typeof data[key] === "boolean"
+                        ? data[key] === true
+                          ? "Yes"
+                          : "No"
+                        : data[key]}{" "}
+                    </i>
                   </b>{" "}
                 </p>
               )
@@ -72,9 +81,9 @@ export default function ShowDetails() {
       <button
         onClick={() => {
           dispatch(
-            type === "wards"
-              ? deleteWardData(data?._id)
-              : deletePatientData(data?._id)
+            type === "events"
+              ? deleteEventData(data?._id)
+              : deleteVolunteer(data?._id)
           );
           navigate(-1);
         }}
@@ -96,20 +105,20 @@ export default function ShowDetails() {
       >
         <Box sx={style}>
           <div className="formToUpdate">
-            {type === "patients" && (
-              <PatientForm
+            {type === "volunteer" && (
+              <VolunteersForm
                 type="update"
                 preData={data}
                 onClose={handleClose}
-                submitFunction={updatePatients}
+                submitFunction={updateVolunteer}
               />
             )}
-            {type === "wards" && (
-              <WardForm
+            {type === "events" && (
+              <EventsForm
                 type="update"
                 preData={data}
                 onClose={handleClose}
-                submitFunction={updateWards}
+                submitFunction={updateEvent}
               />
             )}
           </div>

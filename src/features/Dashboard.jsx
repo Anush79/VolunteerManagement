@@ -1,35 +1,23 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
-
+import Summary from "../components/Summary";
 export default function Dashboard() {
-  const { patients } = useSelector((state) => state?.volunteer);
-  const { wards } = useSelector((state) => state?.wards);
+  const  {volunteers}  = useSelector((state) => state?.volunteers);
+ const [summary, setSummary] = useState('')
 
-  const totalCapacity = wards?.reduce((acc, curr) => {
-    return Number(curr.capacity) + Number(acc);
-  }, 0);
-  const top = patients?.reduce((acc, curr) => {
-    if (acc[curr.ward]) {
-      return { ...acc, [curr.ward]: acc[curr.ward] + 1 }
-    } else {
-      return { ...acc, [curr.ward]: +1 }
-    }
-  }, {})
-  console.log(top)
 
-  const occupancy = (Math.ceil((patients?.length / totalCapacity) * 100))
   return (
     <>
       <h2>Welcome to Volunteer Management System</h2>
-      <p>Users can view hospital-wide data.</p>
-      <p>
-        <p>
-          Total Number of patients :<b> {patients?.length}</b>
-        </p>
-        <p>
-          Current Occupancy Rate:{" "}
-          <b>{typeof occupancy === Number ? occupancy : "calculating..." }%</b>
-        </p>
-      </p>
+    <p>Users can view a summary of a specific event, which includes the list of registered volunteers, volunteer roles, and event details.</p>
+    <p>
+    Users can view a summary of a specific volunteer, which includes their contact information, assigned events, and volunteer history.
+    </p>
+    
+    <button onClick={()=>{setSummary('volunteers')}}>View Volunteers summary</button>
+    <button onClick={()=>{setSummary('events')}}>View Events summary</button>
+
+    <Summary type ={summary}/>
     </>
   );
 }
