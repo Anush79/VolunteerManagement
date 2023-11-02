@@ -3,6 +3,7 @@
 ## Introduction
 
 The Volunteer Management Application is designed to simplify the process of recruiting, tracking, and engaging volunteers for various events and initiatives. It provides tools for organizers to efficiently manage volunteer records, create events, and access event and volunteer statistics.
+<img width="960" alt="image" src="https://github.com/Anush79/VolunteerManagement/assets/66175237/574f455f-d135-46e5-837c-3ddc8b664c3f">
 
 #### Product Description
 
