@@ -1,11 +1,16 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+main{
+  transition: 2ms;
+}
 .logo {
   font-weight: 800;
   text-shadow: 10px 5px 10px #111;
@@ -19,6 +24,8 @@
 }
 
 header {
+  position: sticky;
+  box-shadow: 0 0 3px 1px #333;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
@@ -177,6 +184,10 @@ button {
   flex-direction: column;
   margin: auto;
   align-items: flex-start;
+}
+footer{
+  border-top:1px solid #777;
+  margin-top: 0.5rem;
 }
 @keyframes spin {
   to {

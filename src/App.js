@@ -12,6 +12,7 @@ import HotToast from "./components/HotToast";
 import Volunteer from "./features/volunteer/Volunteer";
 import { fetchVolunteers } from "./features/volunteer/volunteerSlice";
 import Events from "./features/events/Events";
+import Footer from "./components/Footer";
 function App() {
   const dispatch = useDispatch();
   const { status:vloading } = useSelector((state) => state?.volunteers
@@ -39,6 +40,7 @@ function App() {
           <Route path="/:type/:id" element={<ShowDetails />} />
         </Routes>
       </main>
+      <Footer/>
     </div>
   );
 }
