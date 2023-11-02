@@ -69,6 +69,13 @@ React.useEffect(()=>{
           input={<OutlinedInput label="Name" />}
           MenuProps={MenuProps}
         >
+           <MenuItem
+          
+              value={null}
+              style={getStyles("", formData, theme)}
+            >
+              Select Events
+            </MenuItem>
           {events?.map(({name}) => (
             <MenuItem
               key={name}

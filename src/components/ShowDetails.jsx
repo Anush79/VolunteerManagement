@@ -67,7 +67,7 @@ export default function ShowDetails() {
                         ? data[key] === true
                           ? "Yes"
                           : "No"
-                        : data[key]}{" "}
+                        : data[key]?? "Not available"}
                     </i>
                   </b>{" "}
                 </p>
